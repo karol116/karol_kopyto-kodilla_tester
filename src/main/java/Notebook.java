@@ -52,6 +52,5 @@ public class Notebook {
                 System.out.println(" and new");
             }
         }
-
     }
 }
