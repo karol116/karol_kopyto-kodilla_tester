@@ -5,8 +5,5 @@ public class exampleWhile {
             System.out.println(i);
             i++;
         }
-
-
-
     }
 }

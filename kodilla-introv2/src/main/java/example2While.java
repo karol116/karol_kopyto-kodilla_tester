@@ -1,6 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
 
+
+
 public class example2While {
     public static void main(String[] args) {
         int random1 = getCountOfRandomNumber();
