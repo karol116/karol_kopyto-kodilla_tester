@@ -10,10 +10,13 @@ public class User {
 
         int numberOfPeople = users.length;
         int sumOfAges = 0;
+        int averageAge;
+
         for (int j = 0; j < numberOfPeople; j++) {
             sumOfAges = sumOfAges + users[j].age;
         }
-        int averageAge = sumOfAges / numberOfPeople;
+
+        averageAge = sumOfAges / numberOfPeople;
 
         for (int i = 0; i < numberOfPeople; i++) {
             if (users[i].age < averageAge) {

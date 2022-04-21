@@ -8,6 +8,7 @@ public class ManApplication {
         this.age = age;
         this.height = height;
     }
+
     public void older30AndHigher160(){
         if (name != null) {
             if (age > 30 && height > 160) {
