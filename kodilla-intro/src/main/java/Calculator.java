@@ -1,9 +1,9 @@
 public class Calculator {
-    static final double PI = 3.1415927;          // [1]
-    static int counter = 0;                      // [2]
+    static final double PI = 3.1415927;
+    static int counter = 0;
 
     public Calculator() {
-        counter++;                                // [3]
+        counter++;
     }
 
     public double add(double a, double b) {
