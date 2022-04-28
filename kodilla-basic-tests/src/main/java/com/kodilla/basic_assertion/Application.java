@@ -5,9 +5,10 @@ public class Application {
         Calculator calculator = new Calculator();
         int firstNumber = 5;
         int secondNumber = 8;
+        double a = 5;
         int sumResult = calculator.sum(firstNumber, secondNumber);
         int subtractResult = calculator.subtract(firstNumber, secondNumber);
-        int squareResult = calculator.square(firstNumber);
+        double squareResult = calculator.square(a);
 
         boolean correct = ResultChecker.assertEquals(13, sumResult);
         if (correct) {
@@ -23,11 +24,11 @@ public class Application {
             System.out.println("Metoda subtract nie działa poprawnie dla liczb " + firstNumber + " i " + secondNumber);
         }
 
-        correct = ResultChecker.assertEquals(25, squareResult);
+        correct = ResultChecker.assertEqualsForDouble(25, squareResult);
         if (correct) {
-            System.out.println("Metoda square działa poprawnie dla liczby " + firstNumber);
+            System.out.println("Metoda square działa poprawnie dla liczby " + a);
         } else {
-            System.out.println("Metoda square nie działa poprawnie dla liczby " + firstNumber);
+            System.out.println("Metoda square nie działa poprawnie dla liczby " + a);
         }
     }
 }
