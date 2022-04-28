@@ -29,11 +29,19 @@ public class CalculatorTestSuite {
         double a = 5;
         double b = 0;
         double c = -5;
-        double[] squareResultFor = {calculator.square(a), calculator.square(b), calculator.square(c)};
-        int numberOfElements = squareResultFor.length;
 
-        for (int i = 0; i < numberOfElements; i++) {
-            assertEquals(25, squareResultFor[i], 0.1);
-        }
+        double squareResultForNumberA = calculator.square(a);
+        double squareResultForNumberB = calculator.square(b);
+        double squareResultForNumberC = calculator.square(c);
+
+        assertEquals(25, squareResultForNumberA, 0.1);
+        assertEquals(0, squareResultForNumberB, 0.1);
+        assertEquals(25, squareResultForNumberC, 0.1);
+
+//        double[] squareResultFor = {calculator.square(a), calculator.square(b), calculator.square(c)};
+//        int numberOfElements = squareResultFor.length;
+//        for (int i = 0; i < numberOfElements; i++) {
+//            assertEquals(25, squareResultFor[i], 0.1);
+//        }
     }
 }
