@@ -2,21 +2,25 @@ package com.kodilla.abstracts.homework;
 
 public class Rhombus extends Shape {
 
-    private int result;
+    private int sideA;
+    private int sideB;
+    private int height;
 
-    public Rhombus() {
-        super(2, 4, 8, 4, 4, 10);
+    public Rhombus(int sideA, int sideB, int height) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.height = height;
     }
 
     @Override
     public void surfaceArea() {
-        result = (getFirstDiagonal() * getSecondDiagonal()) / 2;
+        double result = sideA * height;
         System.out.println("The area of the rhombus is: " + result);
     }
 
     @Override
     public void circumference() {
-        result = (2 * getSideA()) + (2 * getSideB());
+        double result = 2 * sideA + 2 * sideB;
         System.out.println("The circumference of the rhombus is: " + result);
     }
 }

@@ -14,7 +14,7 @@ public class Person {
     public static void main(String[] args) {
 
         Job watchmaker = new Watchmaker();
-        Job auditor = new Auditor();
+        Job auditor = new Auditor(7200, "auditing companies");
         Job newsagent = new Newsagent();
 
         Person marek = new Person("Marek", 32, newsagent);

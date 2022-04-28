@@ -1,8 +1,8 @@
 package com.kodilla.abstracts.homework;
 
 public class Auditor extends Job {
-    public Auditor() {
-        super(7600, "auditing of companies");
+    public Auditor(int salary, String responsibilities) {
+        super(salary, responsibilities);
     }
 
     @Override
