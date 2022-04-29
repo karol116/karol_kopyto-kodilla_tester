@@ -1,8 +1,8 @@
 package com.kodilla.abstracts.homework;
 
 public class Watchmaker extends Job {
-    public Watchmaker() {
-        super(4200, "Repairing watches");
+    public Watchmaker(int salary, String responsibilities) {
+        super(salary, responsibilities);
     }
 
     @Override

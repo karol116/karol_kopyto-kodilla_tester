@@ -38,6 +38,7 @@ public class Student {
             this.history.add(grade);
         }
     }
+
     public double getMathsAverage() {
         return this.maths.getAverage();
     }

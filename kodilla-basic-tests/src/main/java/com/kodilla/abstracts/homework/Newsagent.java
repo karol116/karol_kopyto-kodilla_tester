@@ -1,8 +1,9 @@
 package com.kodilla.abstracts.homework;
 
 public class Newsagent extends Job {
-    public Newsagent() {
-        super(3700, "Selling newspapers");
+
+    public Newsagent(int salary, String responsibilities) {
+        super(salary, responsibilities);
     }
 
     @Override
