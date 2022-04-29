@@ -17,7 +17,7 @@ public class CashMachine {
             newTab[this.numberOfTransactions - 1] = completedTransaction;
             this.completedTransactions = newTab;
         } else {
-            System.out.println("Enter the correct value of transaction ");
+            System.out.println("Not added. Enter the correct value of transaction ");
         }
     }
 
