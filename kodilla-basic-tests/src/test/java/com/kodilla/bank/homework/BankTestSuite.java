@@ -11,14 +11,13 @@ public class BankTestSuite {
 
     @BeforeEach
     public void setUp() {
-
         aATM = new CashMachine();
         bATM = new CashMachine();
         cATM = new CashMachine();
         bank = new Bank();
     }
 
-    //Test typical cases:
+    //Typical test cases:
     @Test
     public void shouldHaveZeroLength() {
         CashMachine[] cashMachines = bank.getCashMachines();
@@ -49,7 +48,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldReturnCorrectCashMachine() {
-
         bank.addCashMachine(aATM);
         assertEquals(aATM, bank.getCashMachine());
     }
@@ -62,7 +60,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldCorrectCalculateAllCashMachinesBalance() {
-
         aATM.addTransaction(200);
         aATM.addTransaction(-5200);
         aATM.addTransaction(3200);
@@ -105,8 +102,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldReturnCorrectNumberOfPayments() {
-
-
         aATM.addTransaction(40);
         bATM.addTransaction(540);
         cATM.addTransaction(20);
@@ -119,7 +114,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldReturnAverageValueOfWithdrawal() {
-
         double average = (-540 - 40 + -20) / 3.0;
 
         bATM.addTransaction(-540);
@@ -135,7 +129,6 @@ public class BankTestSuite {
 
     @Test
     public void shouldReturnAverageValueOfPayment() {
-
         double average = (405 + 205 + 5460) / 3.0;
 
         aATM.addTransaction(405);

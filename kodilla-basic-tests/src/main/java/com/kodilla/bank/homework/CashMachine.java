@@ -21,7 +21,7 @@ public class CashMachine {
         }
     }
 
-    public int getNumberOfTransactions(){
+    public int getNumberOfTransactions() {
         return numberOfTransactions;
     }
 

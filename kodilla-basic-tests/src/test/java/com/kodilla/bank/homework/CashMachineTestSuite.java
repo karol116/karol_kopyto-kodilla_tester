@@ -1,6 +1,8 @@
 package com.kodilla.bank.homework;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashMachineTestSuite {
@@ -27,23 +29,23 @@ public class CashMachineTestSuite {
         int[] completedTransactions = cashMachine.getValuesOfTransactions();
         assertEquals(3, completedTransactions.length);
         assertEquals(3400, completedTransactions[0]);
-        assertEquals(2100,completedTransactions[1]);
+        assertEquals(2100, completedTransactions[1]);
         assertEquals(-1600, completedTransactions[2]);
     }
 
     @Test
-    public void shouldReturnCorrectValueOfTransactionNumber(){
+    public void shouldReturnCorrectValueOfTransactionNumber() {
         cashMachine.addTransaction(-532);
         cashMachine.addTransaction(5432);
         cashMachine.addTransaction(-2);
         cashMachine.addTransaction(33332);
-        assertEquals(4,cashMachine.getNumberOfTransactions());
+        assertEquals(4, cashMachine.getNumberOfTransactions());
     }
 
     @Test
-    public void shouldReturnCorrectValueOfTransaction(){
+    public void shouldReturnCorrectValueOfTransaction() {
         cashMachine.addTransaction(6000);
-        assertEquals(6000,cashMachine.getValueOfTransaction());
+        assertEquals(6000, cashMachine.getValueOfTransaction());
     }
 
     @Test
