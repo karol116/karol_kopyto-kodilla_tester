@@ -15,7 +15,6 @@ public class CalculatorTestSuite {
         calculator = new Calculator();
     }
 
-
     @Test
     public void testSum() {
         int firstNumber = 5;

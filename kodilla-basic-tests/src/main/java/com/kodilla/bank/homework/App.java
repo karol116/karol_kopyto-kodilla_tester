@@ -3,7 +3,6 @@ package com.kodilla.bank.homework;
 public class App {
     public static void main(String[] args) {
 
-
         CashMachine aATM = new CashMachine();
         CashMachine bATM = new CashMachine();
         CashMachine cATM = new CashMachine();
@@ -34,6 +33,9 @@ public class App {
         Bank bank = new Bank();
         bank.addCashMachine(aATM);
         bank.addCashMachine(bATM);
+        bank.addCashMachine(cATM);
+
+        System.out.println(bank.getAllCashMachinesBalance());
 
 
     }

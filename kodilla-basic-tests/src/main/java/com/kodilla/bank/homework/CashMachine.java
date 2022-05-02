@@ -17,8 +17,15 @@ public class CashMachine {
             newTab[this.numberOfTransactions - 1] = completedTransaction;
             this.completedTransactions = newTab;
         } else {
-            System.out.println("Not added. Enter the correct value of transaction ");
+            System.out.println("Transaction not added. Enter the correct value ");
         }
+    }
+    public int getNumberOfTransactions(){
+        return numberOfTransactions;
+    }
+
+    public int[] getValueOfTransaction() {
+        return completedTransactions;
     }
 
     public int getCashMachineBalance() {
@@ -27,10 +34,6 @@ public class CashMachine {
             sum += completedTransactions[i];
         }
         return sum;
-    }
-
-    public int getNumberOfTransaction() {
-        return numberOfTransactions;
     }
 
     public int getNumberOfWithdrawals() {
@@ -45,7 +48,6 @@ public class CashMachine {
     }
 
     public int getNumberOfPayments() {
-
         int sum = 0;
         for (int i = 0; i < this.completedTransactions.length; i++) {
             if (completedTransactions[i] < 0) {
@@ -56,8 +58,8 @@ public class CashMachine {
         return sum;
     }
 
-    public int getAveragePayment() {
-        int sum = 0;
+    public double getAveragePayment() {
+        double sum = 0;
         for (int i = 0; i < this.completedTransactions.length; i++) {
             if (completedTransactions[i] < 0) {
                 continue;
@@ -67,8 +69,8 @@ public class CashMachine {
         return sum / this.numberOfTransactions;
     }
 
-    public int getAverageWithdrawal() {
-        int sum = 0;
+    public double getAverageWithdrawal() {
+        double sum = 0;
         for (int i = 0; i < this.completedTransactions.length; i++) {
             if (completedTransactions[i] > 0) {
                 continue;
