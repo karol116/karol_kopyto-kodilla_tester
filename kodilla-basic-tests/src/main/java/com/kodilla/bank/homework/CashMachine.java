@@ -20,11 +20,17 @@ public class CashMachine {
             System.out.println("Transaction not added. Enter the correct value ");
         }
     }
+
     public int getNumberOfTransactions(){
         return numberOfTransactions;
     }
 
-    public int[] getValueOfTransaction() {
+    public int getValueOfTransaction() {
+        int i = completedTransactions.length - 1;
+        return completedTransactions[i];
+    }
+
+    public int[] getValuesOfTransactions() {
         return completedTransactions;
     }
 
