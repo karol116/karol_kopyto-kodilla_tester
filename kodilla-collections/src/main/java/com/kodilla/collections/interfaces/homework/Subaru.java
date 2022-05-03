@@ -15,7 +15,6 @@ public class Subaru implements Car {
     @Override
     public void increaseSpeed() {
         speed = getSpeed() + 35;
-
     }
 
     @Override

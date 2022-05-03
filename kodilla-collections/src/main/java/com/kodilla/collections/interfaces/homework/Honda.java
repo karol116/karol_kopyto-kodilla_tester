@@ -15,7 +15,6 @@ public class Honda implements Car {
     @Override
     public void increaseSpeed() {
         speed = getSpeed() + 40;
-
     }
 
     @Override
