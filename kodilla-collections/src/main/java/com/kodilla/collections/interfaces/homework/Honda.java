@@ -21,4 +21,11 @@ public class Honda implements Car {
     public void decreaseSpeed() {
         speed = getSpeed() - 50;
     }
+
+    @Override
+    public String toString() {
+        return "Honda{" +
+                "speed=" + speed +
+                '}';
+    }
 }

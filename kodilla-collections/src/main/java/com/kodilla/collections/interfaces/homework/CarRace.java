@@ -6,6 +6,7 @@ public class CarRace {
         Car carB = new Subaru(110);
         Car carC = new Honda(105);
 
+        carA.increaseSpeed();
         doRace(carA);
         doRace(carB);
         doRace(carC);
