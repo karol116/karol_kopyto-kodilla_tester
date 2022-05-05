@@ -12,9 +12,8 @@ public class StampsApplication {
         stamps.add(new Stamp("Lillehammer", 6, 4, 25, 1993, true));
         stamps.add(new Stamp("Sum", 6, 4, 199, 1995, true));
 
-        for (Stamp stamp : stamps)
-            System.out.println(stamp);
-        System.out.println("\nCollection size: " + stamps.size());
+        for (Stamp stamp : stamps) System.out.println(stamp);
 
+        System.out.println("\nCollection size: " + stamps.size());
     }
 }

@@ -36,7 +36,5 @@ public class App {
         bank.addCashMachine(cATM);
 
         System.out.println(bank.getAllCashMachinesBalance());
-
-
     }
 }

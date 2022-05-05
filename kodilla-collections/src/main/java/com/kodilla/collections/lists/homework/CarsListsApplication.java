@@ -27,6 +27,7 @@ public class CarsListsApplication {
 
         cars.remove(3);
         cars.remove(subaru);
+        cars.remove(new Honda(200));
 
         for (Car car : cars)
             CarUtils.describeCar(car);

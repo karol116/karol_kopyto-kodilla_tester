@@ -4,11 +4,11 @@ import com.kodilla.collections.interfaces.homework.*;
 
 public class CarUtils {
     public static void describeCar(Car car) {
-        System.out.println("\n" + getCarMake(car));
+        System.out.println("\n" + getCarMaker(car));
         System.out.println("Car speed after crossing the finish line: \n" + car.getSpeed() + " kilometres per hour");
     }
 
-    private static String getCarMake(Car car) {
+    private static String getCarMaker(Car car) {
         if (car instanceof Toyota)
             return "Toyota";
         else if (car instanceof Subaru)
