@@ -15,6 +15,7 @@ public class School {
         for (int classroom: numberOfStudents)
             this.numberOfStudents.add(classroom);
     }
+
     public int allNumberOfStudents(){
         int sum = 0;
         for(int numberOfStudents : numberOfStudents)
