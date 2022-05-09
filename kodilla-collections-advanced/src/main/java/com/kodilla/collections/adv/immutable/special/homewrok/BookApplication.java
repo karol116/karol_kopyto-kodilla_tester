@@ -2,7 +2,6 @@ package com.kodilla.collections.adv.immutable.special.homewrok;
 
 public class BookApplication {
     public static void main(String[] args) {
-
         Book bookA = BookManager.createBook("TitleA", "AuthorA");
         Book bookB = BookManager.createBook("TitleB", "AuthorB");
         Book bookC = BookManager.createBook("TitleC", "AuthorC");
@@ -16,7 +15,6 @@ public class BookApplication {
         for (int i = 0; i < BookManager.booksList.size(); i++) {
             System.out.println(BookManager.booksList.get(i));
         }
-
         System.out.println("_____________________");
 
         Book bookD = BookManager.createBook("TitleA", "AuthorA");

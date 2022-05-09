@@ -16,7 +16,7 @@ public class BookManager {
 
     public static Book createBook(String title, String author) {
         for (Book book : booksList) {
-            if ((title.equals(book.getTitle()) && author.equals(book.getAuthor()) && booksList.contains(book))) {
+            if ((title.equals(book.getTitle()) && author.equals(book.getAuthor()) && booksList.size() != 0)) {
                 System.out.println("Book: " + book + " already exists");
                 return book;
             }
