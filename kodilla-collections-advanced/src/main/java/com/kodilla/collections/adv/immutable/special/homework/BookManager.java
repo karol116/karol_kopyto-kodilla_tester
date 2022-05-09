@@ -1,4 +1,4 @@
-package com.kodilla.collections.adv.immutable.special.homewrok;
+package com.kodilla.collections.adv.immutable.special.homework;
 
 import java.util.ArrayList;
 import java.util.List;
