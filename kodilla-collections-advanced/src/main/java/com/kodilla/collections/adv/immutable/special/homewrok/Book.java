@@ -1,11 +1,16 @@
 package com.kodilla.collections.adv.immutable.special.homewrok;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Book {
-    private String title;
-    private String author;
+    String title;
+    String author;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
 
     public Book(String title, String author) {
         this.author = author;
@@ -14,11 +19,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return title + author;
-    }
-    static List<Book> booksList = new ArrayList<>();
-
-    public static List<Book> getBooksList() {
-        return booksList;
+        return "\"" + title + "\"" + " - " + author;
     }
 }
