@@ -12,12 +12,17 @@ public class Dictionary {
         dictionary.put(polishWord, englishWords);
     }
 
-    public List<EnglishWord> findEnglishWord(String polishWord) {
-        return Collections.emptyList();
+    public List<EnglishWord> findEnglishWords(String polishWord) {
+        return dictionary.getOrDefault(polishWord, Collections.emptyList());
     }
 
-    public List<EnglishWord> findEnglishWord(String polishWord, PartOfSpeech partOfSpeech) {
-        return Collections.emptyList();
+    public List<EnglishWord> findEnglishWords(String polishWord, PartOfSpeech partOfSpeech) {
+        List<EnglishWord> result = new ArrayList<>();
+        for (EnglishWord englishWord : dictionary.getOrDefault(polishWord,Collections.emptyList())){
+            if (englishWord.getPartOfSpeech().equals(partOfSpeech))
+                result.add(englishWord);
+        }
+        return result;
     }
 
     public int size() {
