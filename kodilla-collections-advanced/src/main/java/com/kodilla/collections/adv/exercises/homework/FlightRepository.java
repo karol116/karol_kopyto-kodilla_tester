@@ -9,8 +9,10 @@ public class FlightRepository {
         flights.add(new Flight("Charleroi", "Bergamo"));
         flights.add(new Flight("Alicante", "Athens"));
         flights.add(new Flight("Birmingham", "Dublin"));
+        flights.add(new Flight("Bergamo", "Pescara"));
+        flights.add(new Flight("Bergamo", "Heathrow"));
         flights.add(new Flight("Bergamo", "Hamburg"));
-        flights.add(new Flight("Tallinn", "Charleroi"));
+        flights.add(new Flight("Tallinn", "Athens"));
 
         return flights;
     }

@@ -51,6 +51,8 @@ public class DictionaryTestSuite {
         List<EnglishWord> expectedList = new ArrayList<>();
         expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "brotherhood"));
         assertEquals(expectedList, result);
+        System.out.println(expectedList);
+        System.out.println(result);
     }
 
 }

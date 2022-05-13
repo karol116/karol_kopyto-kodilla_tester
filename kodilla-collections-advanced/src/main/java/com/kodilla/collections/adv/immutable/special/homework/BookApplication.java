@@ -5,6 +5,9 @@ public class BookApplication {
         Book bookA = BookManager.createBook("TitleA", "AuthorA");
         Book bookB = BookManager.createBook("TitleB", "AuthorB");
         Book bookC = BookManager.createBook("TitleC", "AuthorC");
+        Book bookE = BookManager.createBook("TitleC", "AuthorC");
+
+        System.out.println(BookManager.booksList.size());
 
         System.out.println("\nIs the same address\n" + (bookA.hashCode() == bookB.hashCode()) + "\n" + bookA.hashCode() + "\n" + bookB.hashCode());
         System.out.println("\nIs the same address\n" + (bookB.hashCode() == bookC.hashCode()) + "\n" + bookB.hashCode() + "\n" + bookC.hashCode());
