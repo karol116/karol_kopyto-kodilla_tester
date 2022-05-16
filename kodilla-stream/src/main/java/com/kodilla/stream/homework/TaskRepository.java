@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskRepository {
-   public static List<Task> getTasks() {
+    public static List<Task> getTasks() {
         List<Task> tasks = new ArrayList<>();
         tasks.add(new Task("Task A", LocalDate.of(2022, 4, 28), LocalDate.of(2022, 5, 7)));
         tasks.add(new Task("Task B", LocalDate.of(2022, 4, 30), LocalDate.of(2022, 5, 4)));
