@@ -16,8 +16,4 @@ public class FlightRepository {
 
         return flights;
     }
-
-    public static int getFlightsListSize(){
-        return getFlightsTable().size();
-    }
 }
