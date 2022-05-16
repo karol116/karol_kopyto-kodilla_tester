@@ -2,12 +2,13 @@ package com.kodilla.optional.homework;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 public class Application {
     public static void main(String[] args) {
         List<Student> student = new ArrayList<>();
-        student.add(new Student("John", new Teacher("Adam")));
+        student.add(new Student("Andy", new Teacher("Adam")));
         student.add(new Student("Olivia", new Teacher("Adam")));
         student.add(new Student("Joshua", null));
         student.add(new Student("Daniel", new Teacher("Emily")));
