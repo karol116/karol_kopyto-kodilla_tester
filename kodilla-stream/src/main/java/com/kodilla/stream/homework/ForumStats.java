@@ -9,22 +9,20 @@ public class ForumStats {
     }
 
     private static double avgNumberOfOldUsersPost() {
-        double avgNumber = UserRepository.getUserList()
+        return UserRepository.getUserList()
                 .stream()
                 .filter(u -> u.getAge() >= 40)
                 .mapToInt(n -> n.getNumberOfPost())
                 .average()
                 .getAsDouble();
-        return avgNumber;
     }
 
     private static double avgNumberOfYoungUsersPost() {
-        double avgNumber = UserRepository.getUserList()
+        return UserRepository.getUserList()
                 .stream()
                 .filter(u -> u.getAge() < 40)
                 .mapToInt(n -> n.getNumberOfPost())
                 .average()
                 .getAsDouble();
-        return avgNumber;
     }
 }
