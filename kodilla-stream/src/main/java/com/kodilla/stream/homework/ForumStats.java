@@ -4,21 +4,27 @@ import com.kodilla.stream.UserRepository;
 
 public class ForumStats {
     public static void main(String[] args) {
-        double avgNumberOfOldUsersPosts = UserRepository.getUserList()
+        System.out.println("Average number of posts written by a user aged 40+:\n- " + avgNumberOfYoungUsersPost());
+        System.out.println("Average number of posts written by a user under 40:\n- " + avgNumberOfOldUsersPost());
+    }
+
+    private static double avgNumberOfOldUsersPost() {
+        double avgNumber = UserRepository.getUserList()
                 .stream()
                 .filter(u -> u.getAge() >= 40)
                 .mapToInt(n -> n.getNumberOfPost())
                 .average()
                 .getAsDouble();
+        return avgNumber;
+    }
 
-        double avgNumberOfYoungUsersPosts = UserRepository.getUserList()
+    private static double avgNumberOfYoungUsersPost() {
+        double avgNumber = UserRepository.getUserList()
                 .stream()
                 .filter(u -> u.getAge() < 40)
                 .mapToInt(n -> n.getNumberOfPost())
                 .average()
                 .getAsDouble();
-
-        System.out.println("Average number of posts written by a user under 40:\n- " + avgNumberOfOldUsersPosts);
-        System.out.println("Average number of posts written by a user aged 40+:\n- " + avgNumberOfYoungUsersPosts);
+        return avgNumber;
     }
 }
