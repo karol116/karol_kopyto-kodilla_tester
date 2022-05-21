@@ -15,11 +15,11 @@ public class Warehouse {
         return orders;
     }
 
-    public Order getOrder(String number) throws OrderDoesntExistException {
+    public Order getOrder(String number) throws Exception{
         Order foundOrder = getOrders()
                 .stream()
                 .filter(u -> u.getNumber().equals(number))
-                .findAny().orElseThrow(() -> new OrderDoesntExistException());
+                .findAny().orElseThrow(() -> new Exception("fail"));
         return foundOrder;
     }
 }

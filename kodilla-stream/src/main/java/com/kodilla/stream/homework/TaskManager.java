@@ -7,10 +7,13 @@ import java.util.stream.Collectors;
 public class TaskManager {
     public static void main(String[] args) {
         List<LocalDate> deadlines = TaskRepository.getTasks()
-            .stream()
-            .filter(u -> u.getDeadline().isAfter(LocalDate.now()))
-            .map(Task::getDeadline)
-            .collect(Collectors.toList());
-            System.out.println(deadlines);
+                .stream()
+                .filter(u -> u.getDeadline().isAfter(LocalDate.now()))
+                .map(Task::getDeadline)
+                .collect(Collectors.toList());
+
+        for (LocalDate task : deadlines) {
+            System.out.println("deadline: " + task);
+        }
     }
 }

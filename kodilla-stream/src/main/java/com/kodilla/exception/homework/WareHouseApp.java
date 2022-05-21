@@ -12,7 +12,7 @@ public class WareHouseApp {
 
         try {
             warehouse.getOrder("00030");
-        } catch (OrderDoesntExistException e) {
+        } catch (Exception e) {
             System.out.println("Order doesn't exist");
         }
     }
