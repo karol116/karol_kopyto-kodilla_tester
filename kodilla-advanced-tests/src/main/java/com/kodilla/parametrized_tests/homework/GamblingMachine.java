@@ -1,6 +1,5 @@
 package com.kodilla.parametrized_tests.homework;
 
-import java.sql.ClientInfoStatus;
 import java.util.*;
 
 public class GamblingMachine {
@@ -32,15 +31,5 @@ public class GamblingMachine {
             numbers.add(generator.nextInt(49) + 1);
         }
         return numbers;
-    }
-
-    public static void main(String[] args) {
-        GamblingMachine gamblingMachine = new GamblingMachine();
-        Set<Integer> numbers = new HashSet<>();
-
-
-
-
-
     }
 }
