@@ -2,7 +2,7 @@ package com.kodilla.parametrized_tests.homework;
 
 import java.util.*;
 
-public class GamblingMachine {
+public class  GamblingMachine {
     public int howManyWins(Set<Integer> userNumbers) throws InvalidNumbersException {
         validateNumbers(userNumbers);
         Set<Integer> computerNumbers = generateComputerNumbers();

@@ -12,14 +12,12 @@ public class App {
         shop.addOrder(new Order(423, LocalDate.of(2021, 2, 5), "tko"));
         shop.addOrder(new Order(198, LocalDate.of(2021, 3, 21), "dfsw"));
         shop.addOrder(new Order(209, LocalDate.of(2021, 8, 15), "yood3"));
-        System.out.println(shop.twoYearsOrders(shop.orders.get(0).getDate(), shop.orders.get(5).getDate()));
-        System.out.println(shop.twoYearsOrders(LocalDate.of(2020,1,23),LocalDate.of(2021,3,3)));
+        System.out.println(shop.getTwoYearsOrders(shop.orders.get(0).getDate()));
+        System.out.println(shop.getTwoYearsOrders(LocalDate.of(2020,1,23)));
         System.out.println(shop.getNumberOfOrders());
         System.out.println(shop.getSumOfOrdersValue());
         System.out.println(shop.ordersFromMinimumToMaximumValue(300,400));
         System.out.println("--------------------------");
         System.out.println(shop.getOrders());
-
-
     }
 }

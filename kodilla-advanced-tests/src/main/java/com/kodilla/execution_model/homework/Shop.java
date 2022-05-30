@@ -16,11 +16,11 @@ public class Shop {
         return orders;
     }
 
-    public List<Order> twoYearsOrders(LocalDate dateFrom, LocalDate dateTo) {
+    public List<Order> getTwoYearsOrders(LocalDate dateFrom) {
         return orders
                 .stream()
                 .filter(u -> u.getDate().isAfter(dateFrom))
-                .filter(u -> u.getDate().isBefore(dateTo))
+                .filter(u -> u.getDate().isBefore(dateFrom.plusYears(2)))
                 .collect(Collectors.toList());
     }
 

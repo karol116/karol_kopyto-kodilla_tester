@@ -47,7 +47,7 @@ class InvoiceTestSuite {
     }
 
     @Test
-    public void shouldReturnNullAfterGetingValueLargerThanIndexValue() {
+    public void shouldReturnNullAfterGettingValueLargerThanIndexValue() {
         System.out.println("Maximum index value: " + (invoice.getSize() - 1));
         assertNull(invoice.getItem(10));
     }

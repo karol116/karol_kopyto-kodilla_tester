@@ -32,7 +32,7 @@ public class Order {
         return "Order{" +
                 "value=" + value +
                 ", date=" + date +
-                ", login='" + login + '\'' +
-                '}';
+                ", login= '" + login + '\'' +
+                "}\n";
     }
 }
