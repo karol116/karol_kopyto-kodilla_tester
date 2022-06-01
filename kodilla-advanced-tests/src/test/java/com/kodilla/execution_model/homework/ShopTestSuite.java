@@ -1,5 +1,7 @@
 package com.kodilla.execution_model.homework;
 
+import com.kodilla.mockito.execution_model.homework.Order;
+import com.kodilla.mockito.execution_model.homework.Shop;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +44,7 @@ class ShopTestSuite {
 
     @Test
     public void isOrderAddedToList() {
-       shop.orders.clear();
+       shop.getOrders().clear();
        shop.addOrder(new Order(0,LocalDate.of(2000,2,1),"test12"));
         assertEquals(1, shop.getNumberOfOrders());
     }

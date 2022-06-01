@@ -1,4 +1,4 @@
-package com.kodilla.execution_model;
+package com.kodilla.mockito.execution_model;
 
 public class Item {
     private String name;

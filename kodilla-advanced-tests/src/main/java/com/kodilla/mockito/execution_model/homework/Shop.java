@@ -1,4 +1,4 @@
-package com.kodilla.execution_model.homework;
+package com.kodilla.mockito.execution_model.homework;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -46,5 +46,10 @@ public class Shop {
             sumOfValueOfOrder = sumOfValueOfOrder + valueOfOrder;
         }
         return sumOfValueOfOrder;
+    }
+
+    public void clear(List<Order> orders) {
+        this.orders.clear();
+
     }
 }

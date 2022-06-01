@@ -1,7 +1,6 @@
-package com.kodilla.execution_model.homework;
+package com.kodilla.mockito.execution_model.homework;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class App {
     public static void main(String[] args) {

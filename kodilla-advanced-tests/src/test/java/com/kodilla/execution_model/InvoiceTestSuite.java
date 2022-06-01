@@ -1,5 +1,7 @@
 package com.kodilla.execution_model;
 
+import com.kodilla.mockito.execution_model.Invoice;
+import com.kodilla.mockito.execution_model.Item;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
