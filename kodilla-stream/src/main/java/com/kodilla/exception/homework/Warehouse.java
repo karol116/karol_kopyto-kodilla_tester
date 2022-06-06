@@ -19,7 +19,7 @@ public class Warehouse {
         Order foundOrder = getOrders()
                 .stream()
                 .filter(u -> u.getNumber().equals(number))
-                .findAny().orElseThrow(() -> new Exception("fail"));
+                .findAny().orElseThrow(() -> new OrderDoesntExistException());
         return foundOrder;
     }
 }

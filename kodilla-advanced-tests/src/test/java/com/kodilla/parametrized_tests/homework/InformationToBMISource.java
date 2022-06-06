@@ -11,7 +11,7 @@ public class InformationToBMISource {
                 Arguments.of(1.7, 45.7, 15.81, "Severely underweight"),
                 Arguments.of(1.66, 50.8, 18.44, "Underweight"),
                 Arguments.of(1.78, 78.8, 24.87, "Normal (healthy weight)"),
-                Arguments.of(1.78, 79.2, 25, "Overweight"),
+                /*Arguments.of(1.78, 79.2, 25, "Overweight"),*/
                 Arguments.of(1.7, 100, 34.6, "Obese Class I (Moderately obese)"),
                 Arguments.of(1.69, 100, 35.01, "Obese Class II (Severely obese)"),
                 Arguments.of(1.75, 137.5, 44.9, "Obese Class III (Very severely obese)"),

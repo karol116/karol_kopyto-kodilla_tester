@@ -15,7 +15,7 @@ class UserValidatorTestSuite {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"", "  ", ".w...@.w", " nskd@kwq.soc", "asd.ds.@j72.pl", "name@dsads", "33@3.3", "nDa@121.6g7", "nad.sad@csa.gd@i34.pf", "needa#FT.cc", "ew453f.ef3@rew.8ew", "ajgh,bfdf@fee.few"})
+    @ValueSource(strings = {/*""*/ "  ", ".w...@.w", " nskd@kwq.soc", "asd.ds.@j72.pl", "name@dsads", "33@3.3", "nDa@121.6g7", "nad.sad@csa.gd@i34.pf", "needa#FT.cc", "ew453f.ef3@rew.8ew", "ajgh,bfdf@fee.few"})
     public void shouldReturnFalseIfEmailDoesNotContainsInSequence_LettersOrNumbersOrPeriodsDotsInside_AtSign_LettersOrNumbersOrPeriodsDotsInside_Dot_Letters(String email) {
         assertFalse(user.validateEmail(email));
     }

@@ -29,6 +29,7 @@ class WeatherForecastServiceTestSuite {
     public void savedPersonToParticularLocationShouldReceiveAlert() {
         weatherForecastService.addPersonToParticularLocation(locationA, personA);
         weatherForecastService.addPersonToParticularLocation(locationB, personA);
+        weatherForecastService.addPersonToParticularLocation(locationB, personB);
         weatherForecastService.sendWeatherAlertToParticularLocation(locationB, weatherAlert);
 
         Mockito.verify(personA, Mockito.times(1)).receive(weatherAlert);
