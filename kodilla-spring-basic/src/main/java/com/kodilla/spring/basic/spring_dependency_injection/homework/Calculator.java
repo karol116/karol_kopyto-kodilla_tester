@@ -1,16 +1,15 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Calculator {
+
     private double value;
-    Display display;
 
-
-    public Calculator(Display display) {
-        this.display = display;
-    }
+    @Autowired
+    private Display display;
 
     public double add(double a, double b) {
         value = a + b;

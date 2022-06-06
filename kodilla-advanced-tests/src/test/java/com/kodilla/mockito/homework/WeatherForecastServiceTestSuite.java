@@ -73,13 +73,14 @@ class WeatherForecastServiceTestSuite {
         Mockito.verify(personA, Mockito.times(1)).receive(weatherAlert);
     }
 
+
     @Test
     public void itIsPossibleToSendNotificationToAll() {
         weatherForecastService.addPersonToParticularLocation(locationA, personB);
         weatherForecastService.addPersonToParticularLocation(locationB, personA);
         weatherForecastService.sendNotificationToAllUsers(notification);
-        Mockito.verify(personB, Mockito.atLeastOnce()).receive(notification);
-        Mockito.verify(personA, Mockito.atLeastOnce()).receive(notification);
+        Mockito.verify(personB, Mockito.times(1)).receive(notification);
+        Mockito.verify(personA, Mockito.times(1)).receive(notification);
     }
 
     @Test

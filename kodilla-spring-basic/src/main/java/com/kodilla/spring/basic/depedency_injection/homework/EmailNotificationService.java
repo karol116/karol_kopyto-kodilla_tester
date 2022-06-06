@@ -1,6 +1,6 @@
 package com.kodilla.spring.basic.depedency_injection.homework;
 
-public class EmailNotificationService implements NotificationService{
+public class EmailNotificationService implements NotificationService {
     @Override
     public void success(String address) {
         System.out.println("Package delivered to: " + address + ". Do not reply to this email.");

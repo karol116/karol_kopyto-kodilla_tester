@@ -22,7 +22,7 @@ public class WeatherForecastService {
     public void sendNotificationToAllUsers(Notification notification) {
     locationsOfPersons.values()
             .stream()
-            .flatMap(Collection::stream)
+            .flatMap(Collection::stream).distinct()
             .forEach(person->person.receive(notification));
     }
 
