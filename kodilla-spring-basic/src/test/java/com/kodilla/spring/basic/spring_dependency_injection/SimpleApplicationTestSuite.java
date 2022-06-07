@@ -6,11 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
-class SimpleApplicationTestSuite {
-
+public class SimpleApplicationTestSuite {
     @Test
     public void shouldReturnCorrectMessage() {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic"); // [1]
@@ -21,11 +18,9 @@ class SimpleApplicationTestSuite {
 
     @Test
     public void shouldProcessMessage() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic"); // [1]
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
         SimpleApplication bean = context.getBean(SimpleApplication.class);
         String message = bean.processMessage("Test", "Any receiver");
-        Assertions.assertEquals("Sending [Test] to: Any receiver using Skype",message);
+        Assertions.assertEquals("Sending [Test] to: Any receiver using Skype", message);
     }
-
-
 }
