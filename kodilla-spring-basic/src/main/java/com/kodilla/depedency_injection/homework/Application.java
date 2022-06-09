@@ -1,4 +1,4 @@
-package com.kodilla.spring.basic.depedency_injection.homework;
+package com.kodilla.depedency_injection.homework;
 
 public class Application {
     public static void main(String[] args) {

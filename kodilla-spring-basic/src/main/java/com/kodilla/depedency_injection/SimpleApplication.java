@@ -1,4 +1,4 @@
-package com.kodilla.spring.basic.depedency_injection;
+package com.kodilla.depedency_injection;
 
 public class SimpleApplication {
     private MessageService messageService;
