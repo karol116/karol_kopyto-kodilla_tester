@@ -16,24 +16,24 @@ class CarFactoryTestSuite {
         context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
     }
 
-    @Test
-    public void testSedanCreated() {
-        Coupe coupe = context.getBean(Coupe.class);
-        Assertions.assertEquals("Coupe", coupe.getCarType());
-    }
-
-    @Test
-    public void carShouldHaveItsLightsSwitchedOffIfItIsAfterEightPMAndBeforeSixAMNow() {
-        Compact compact = context.getBean(Compact.class);
-        boolean lightsOn = compact.hasHeadlightsTurnedOn();
-        Assertions.assertEquals("Compact", compact.getCarType());
-        Assertions.assertFalse(lightsOn);
-    }
-
-    @Test
-    public void shouldReturnCoupeIfItIsSummerNow() {
-        CarFactory carFactory = context.getBean(CarFactory.class);
-        Coupe coupe = context.getBean(Coupe.class);
-        Assertions.assertEquals(coupe, carFactory.carChoice());
-    }
+//    @Test
+//    public void testSedanCreated() {
+//        Coupe coupe = context.getBean(Coupe.class);
+//        Assertions.assertEquals("Coupe", coupe.getCarType());
+//    }
+//
+//    @Test
+//    public void carShouldHaveItsLightsSwitchedOffIfItIsAfterEightPMAndBeforeSixAMNow() {
+//        Compact compact = context.getBean(Compact.class);
+//        boolean lightsOn = compact.hasHeadlightsTurnedOn();
+//        Assertions.assertEquals("Compact", compact.getCarType());
+//        Assertions.assertFalse(lightsOn);
+//    }
+//
+//    @Test
+//    public void shouldReturnCoupeIfItIsSummerNow() {
+//        CarFactory carFactory = context.getBean(CarFactory.class);
+//        Coupe coupe = context.getBean(Coupe.class);
+//        Assertions.assertEquals(coupe, carFactory.carChoice());
+//    }
 }
