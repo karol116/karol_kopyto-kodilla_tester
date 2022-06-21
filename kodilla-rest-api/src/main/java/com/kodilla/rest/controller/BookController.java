@@ -9,7 +9,7 @@ import java.util.List;
 @RequestMapping("/books")
 class BookController {
 
-    private final BookService bookService;
+    private BookService bookService;
 
     public BookController(BookService bookService) {
         this.bookService = bookService;
@@ -22,6 +22,7 @@ class BookController {
 
     @PostMapping
     public void addBook(@RequestBody BookDto bookDto) {
+        System.out.println(bookDto);
         bookService.addBook(bookDto);
     }
 

@@ -15,6 +15,7 @@ public class BookService {
     }
 
     public void addBook(BookDto bookDto) {
+        System.out.println(bookDto);
         books.add(bookDto);
     }
 
