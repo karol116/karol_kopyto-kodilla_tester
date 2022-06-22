@@ -32,8 +32,8 @@ class BookControllerTest {
     @Test
     void shouldAddBookToBookController() {
         BookController bookController = Mockito.mock(BookController.class);
-        BookDto bookDto = new BookDto("BookA", "AuthorA");
-        bookController.addBook(new BookDto("BookA", "AuthorA"));
+        BookDto bookDto = new BookDto("Book1", "Author1");
+        bookController.addBook(new BookDto("Book1", "Author1"));
 
         Mockito.verify(bookController).addBook(bookDto);
 
