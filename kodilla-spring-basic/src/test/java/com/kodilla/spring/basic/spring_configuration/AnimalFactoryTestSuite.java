@@ -24,16 +24,16 @@ class AnimalFactoryTestSuite {
         Assertions.assertEquals("Bark bark", voice);
     }
 
-    @Test
-    public void shouldCreateDogBeanAndFetchByBeanName() {
-        //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Dog dog = (Dog) context.getBean("createDog");
-        //When
-        String voice = dog.getVoice();
-        //Then
-        Assertions.assertEquals("Bark bark", voice);
-    }
+//    @Test
+//    public void shouldCreateDogBeanAndFetchByBeanName() {
+//        //Given
+//        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+//        Dog dog = (Dog) context.getBean("createDog");
+//        //When
+//        String voice = dog.getVoice();
+//        //Then
+//        Assertions.assertEquals("Bark bark", voice);
+//    }
 
     @Test
     public void shouldCreateRandomAnimal() {
