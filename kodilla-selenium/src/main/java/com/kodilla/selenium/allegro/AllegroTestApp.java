@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class AllegroTestApp {
     public static void main(String[] args) {
@@ -12,14 +16,24 @@ public class AllegroTestApp {
         WebDriver driver = new ChromeDriver();
         driver.get("https://allegro.pl/");
 
-        WebElement confirmCookieFiles = driver.findElement(By.xpath("//html/body/div[2]/div[1]/div/div[2]/div[2]/button[1]"));
+        WebElement confirmCookieFiles = driver.findElement(By.cssSelector("button[class*='k4 _158e2_rNMWZ ']"));
         confirmCookieFiles.click();
 
-        WebElement categoryList = driver.findElement(By.xpath("//*[@class=\"mp7g_oh mr3m_1 s4kyg\"]/select"));
+        WebElement categoryList = driver.findElement(By.cssSelector("form > div > div > select"));
         Select categorySelect = new Select(categoryList);
         categorySelect.selectByIndex(3);
 
-        WebElement inputField = driver.findElement(By.xpath("//*[@class=\"mp4t_8 mp4t_0_l mryx_8 mryx_0_s m7er_k4 _13850_O2svT\"]/div/div/form/input"));
+        WebElement inputField = driver.findElement(By.cssSelector("header > div > div > div > div > form > input"));
         inputField.sendKeys("Mavic mini");
+        inputField.submit();
+
+        WebDriverWait wait = new WebDriverWait(driver,15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("section>article[data-analytics-view-custom-index0=\"0\"]")));
+
+        List<WebElement> searchResults = driver.findElements(By.cssSelector("section > article"));
+        System.out.println(searchResults.get(0).getText());
+
+
+
     }
 }
