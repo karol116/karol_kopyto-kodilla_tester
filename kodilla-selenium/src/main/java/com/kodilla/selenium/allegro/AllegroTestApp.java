@@ -27,13 +27,10 @@ public class AllegroTestApp {
         inputField.sendKeys("Mavic mini");
         inputField.submit();
 
-        WebDriverWait wait = new WebDriverWait(driver,15);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("section>article[data-analytics-view-custom-index0=\"0\"]")));
 
         List<WebElement> searchResults = driver.findElements(By.cssSelector("section > article"));
         System.out.println(searchResults.get(0).getText());
-
-
-
     }
 }
