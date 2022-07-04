@@ -16,14 +16,20 @@ public class TestGoogle {
         driver.navigate().to("http://www.google.com");
     }
 
-    @After
-    public void tearDown() {
-        driver.close();
-    }
+//        @After
+//    public void tearDown() {
+//        driver.close();
+//    }
 
     @Test
     public void testGooglePage() {
         GoogleSearch googleSearch = new GoogleSearch(driver);
         googleSearch.searchResults();
+    }
+
+    @Test
+    public void testOpenRandomSearchedPage() {
+        GoogleSearch googleSearch = new GoogleSearch(driver);
+        googleSearch.openRandomSearchedPage(driver);
     }
 }
