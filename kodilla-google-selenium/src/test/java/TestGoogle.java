@@ -1,3 +1,5 @@
+
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,20 +18,22 @@ public class TestGoogle {
         driver.navigate().to("http://www.google.com");
     }
 
-//        @After
-//    public void tearDown() {
-//        driver.close();
-//    }
-
-    @Test
-    public void testGooglePage() {
-        GoogleSearch googleSearch = new GoogleSearch(driver);
-        googleSearch.searchResults();
+    @After
+    public void tearDown() {
+        driver.close();
     }
+
+//    @Test
+//    public void testGooglePage() {
+//        GoogleSearch googleSearch = new GoogleSearch(driver);
+//        googleSearch.searchResults();
+//    }
 
     @Test
     public void testOpenRandomSearchedPage() {
         GoogleSearch googleSearch = new GoogleSearch(driver);
         googleSearch.openRandomSearchedPage(driver);
+
+
     }
 }
