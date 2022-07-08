@@ -3,6 +3,7 @@ package com.kodilla.rest.controller;
 import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -22,7 +23,8 @@ class BookController {
 
     @PostMapping
     public void addBook(@RequestBody BookDto bookDto) {
-        System.out.println(bookDto);
+        bookService = new BookService();
+        System.out.println("book" + bookDto);
         bookService.addBook(bookDto);
     }
 

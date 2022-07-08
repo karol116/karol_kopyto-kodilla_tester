@@ -31,16 +31,12 @@ class BookControllerTest {
 
     @Test
     void shouldAddBookToBookController() {
-        BookController bookController = Mockito.mock(BookController.class);
-        BookDto bookDto = new BookDto("Book1", "Author1");
+        BookService bookServiceMock = Mockito.mock(BookService.class);
+        BookController bookController = new BookController(bookServiceMock);
         bookController.addBook(new BookDto("Book1", "Author1"));
 
-        Mockito.verify(bookController).addBook(bookDto);
+        int result = bookController.getBooks().size();
 
-        // when
-//        int result = bookController.getBooks().size();
-
-        //then
-//        assertThat(result).isEqualTo(1);
+        assertThat(result).isEqualTo(1);
     }
 }
