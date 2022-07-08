@@ -3,18 +3,10 @@ package wallet;
 import io.cucumber.java8.En;
 import org.junit.Assert;
 
-
 public class WalletSteps implements En {
     Wallet wallet = new Wallet();
     CashSlot cashSlot = new CashSlot();
 
-    //          | $200    | $30        | $30       |
-//            | $0      | $120       | $0        |
-//            | $0      | $0         | $0        |
-//            | -$200   | $2000      | $0        |
-//            | $1200   | $2000      | $0        |
-//            | $10     | $10        | $10       |
-//            | $600    | -$300      | $0        |
     public WalletSteps() {
         Given("I have deposited $200 in my wallet", () -> {
             wallet.deposit(200);
@@ -53,7 +45,6 @@ public class WalletSteps implements En {
             Cashier cashier = new Cashier(cashSlot);
             cashier.withdraw(wallet, 0);
         });
-
         When("I request $2000", () -> {
             Cashier cashier = new Cashier(cashSlot);
             cashier.withdraw(wallet, 2000);
