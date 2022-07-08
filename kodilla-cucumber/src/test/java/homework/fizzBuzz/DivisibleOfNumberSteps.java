@@ -35,7 +35,6 @@ public class DivisibleOfNumberSteps implements En {
         });
         Then("returned message is {string}", (String string) -> {
             Assert.assertEquals(string, this.message);
-
         });
     }
 }
