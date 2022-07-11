@@ -20,11 +20,9 @@ public class FacebookTestApp {
         WebElement createAccount = driver.findElement(By.xpath("//html/body/div/div/div/div/div/div/div/div/div/form/div[5]/a"));
         createAccount.click();
 
-//        WebElement yearCombo = driver.findElement(
-//                By.xpath("//*[@id=\"birthday_wrapper\"]/div/span/span/select[3]"));
-//
-//        Select yearSelect = new Select(yearCombo);
-//        yearSelect = new Select(yearCombo);
-//        yearSelect.selectByIndex(5);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#reg_box > div._8fgl._9l2p")));
+        WebElement yearCombo = driver.findElement(By.cssSelector("#year"));
+        Select yearSelect = new Select(yearCombo);
+        yearSelect.selectByIndex(5);
     }
 }

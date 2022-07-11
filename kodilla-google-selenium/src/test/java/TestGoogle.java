@@ -1,11 +1,13 @@
-
-
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.GoogleResults;
 import pages.GoogleSearch;
+import pages.RandomSearchedPage;
 
 public class TestGoogle {
 
@@ -23,17 +25,19 @@ public class TestGoogle {
         driver.close();
     }
 
-//    @Test
-//    public void testGooglePage() {
-//        GoogleSearch googleSearch = new GoogleSearch(driver);
-//        googleSearch.searchResults();
-//    }
+    @Test
+    public void testGooglePage() {
+        GoogleSearch googleSearch = new GoogleSearch(driver);
+        googleSearch.loadResults(driver);
+    }
 
     @Test
     public void testOpenRandomSearchedPage() {
         GoogleSearch googleSearch = new GoogleSearch(driver);
-        googleSearch.openRandomSearchedPage(driver);
+        GoogleResults googleResults = googleSearch.loadResults(driver);
+        RandomSearchedPage randomSearchedPage = googleResults.loadRandomPage(driver);
+        String linkText = randomSearchedPage.getLink();
 
-
+        Assert.assertEquals(linkText, driver.getCurrentUrl());
     }
 }

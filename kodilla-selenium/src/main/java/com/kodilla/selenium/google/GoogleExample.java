@@ -18,5 +18,6 @@ public class GoogleExample {
         WebElement inputField = driver.findElement(By.name("q"));
         inputField.sendKeys("Kodilla");
         inputField.submit();
+        driver.close();
     }
 }
