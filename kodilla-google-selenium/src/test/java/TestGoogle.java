@@ -5,9 +5,7 @@ import org.junit.Test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.GoogleResults;
 import pages.GoogleSearch;
-import pages.RandomSearchedPage;
 
 public class TestGoogle {
 
@@ -34,10 +32,10 @@ public class TestGoogle {
     @Test
     public void testOpenRandomSearchedPage() {
         GoogleSearch googleSearch = new GoogleSearch(driver);
-        GoogleResults googleResults = googleSearch.loadResults(driver);
-        RandomSearchedPage randomSearchedPage = googleResults.loadRandomPage(driver);
-        String linkText = randomSearchedPage.getLink();
-
+        String linkText = googleSearch
+                .loadResults(driver)
+                .loadRandomPage(driver)
+                .getLink();
         Assert.assertEquals(linkText, driver.getCurrentUrl());
     }
 }
