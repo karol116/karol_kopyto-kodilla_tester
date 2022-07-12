@@ -9,8 +9,4 @@ public class RandomSearchedPage extends AbstractPage {
         super(driver);
         PageFactory.initElements(this.driver, this);
     }
-
-    public String getLink() {
-        return driver.getCurrentUrl();
-    }
 }

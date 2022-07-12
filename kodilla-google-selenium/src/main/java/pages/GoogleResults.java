@@ -17,7 +17,7 @@ public class GoogleResults extends AbstractPage {
         PageFactory.initElements(this.driver, this);
     }
 
-    public RandomSearchedPage loadRandomPage(WebDriver driver) {
+    public RandomSearchedPage loadRandomPage() {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a")).get(0)));
         List<WebElement> results = driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a"));
@@ -25,5 +25,22 @@ public class GoogleResults extends AbstractPage {
         int generatedNumber = generator.nextInt(results.size() - 1);
         results.get(generatedNumber).click();
         return new RandomSearchedPage(driver);
+    }
+
+    public RandomSearchedPage loadSelectedPage(int indexOfSearchResult) {
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a")).get(0)));
+        List<WebElement> results = driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a"));
+        results.get(indexOfSearchResult).click();
+        return new RandomSearchedPage(driver);
+    }
+
+    public String getLink() {
+        List<WebElement> elements = driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a[@href]"));
+        Random random = new Random();
+        int randomElement = random.nextInt(elements.size() - 1);
+        String linkText = elements.get(randomElement).getAttribute("href");
+        System.out.println(linkText);
+        return linkText;
     }
 }
