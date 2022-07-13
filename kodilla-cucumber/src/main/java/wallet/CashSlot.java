@@ -8,6 +8,7 @@ public class CashSlot {
     }
 
     public void dispense(int amount){
+        if(amount>0)
         this.contests = amount;
     }
 }
