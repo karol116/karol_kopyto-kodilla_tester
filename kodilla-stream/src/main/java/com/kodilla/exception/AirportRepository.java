@@ -12,9 +12,10 @@ public class AirportRepository {
         airports.put("Warsaw", true);
         return airports;
     }
+
     public boolean isAirportInUse(String airport) throws AirportNotFoundException {
         if (getListOfAirports().containsKey(airport))
             return getListOfAirports().get(airport);
-            throw new AirportNotFoundException();
+        throw new AirportNotFoundException();
     }
 }
