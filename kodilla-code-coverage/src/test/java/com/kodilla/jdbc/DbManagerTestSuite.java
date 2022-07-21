@@ -92,5 +92,10 @@ class DbManagerTestSuite {
         }
 
         Assertions.assertEquals(count.size(), counter);
+
+        rs.close();
+
+        statement.close();
+
     }
 }
