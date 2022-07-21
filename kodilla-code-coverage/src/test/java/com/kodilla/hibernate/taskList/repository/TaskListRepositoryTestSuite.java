@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.taskLiist.repository;
+package com.kodilla.hibernate.taskList.repository;
 
 
 import com.kodilla.hibernate.task.repository.TaskListRepository;
