@@ -15,7 +15,7 @@ public class TaskListRepositoryTestSuite {
     @Autowired
     private TaskListRepository taskListRepository;
 
-    private static final String DESCRIPTION = "Test: Do Hibernate Hibernate homework";
+    private static final String DESCRIPTION = "Test: Do Hibernate homework";
 
     @Test
     void testTaskRepositoryFindByDuration() {
