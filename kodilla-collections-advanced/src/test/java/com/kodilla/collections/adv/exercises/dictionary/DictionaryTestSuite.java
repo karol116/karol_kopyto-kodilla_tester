@@ -54,5 +54,4 @@ public class DictionaryTestSuite {
         System.out.println(expectedList);
         System.out.println(result);
     }
-
 }

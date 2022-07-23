@@ -20,6 +20,7 @@ public final class Book {
     public final String getTitle() {
         return title;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,5 +33,4 @@ public final class Book {
     public int hashCode() {
         return Objects.hash(12, "xx", "zz");
     }
-
 }

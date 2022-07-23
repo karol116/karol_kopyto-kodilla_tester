@@ -16,10 +16,9 @@ public class Warehouse {
     }
 
     public Order getOrder(String number) throws Exception{
-        Order foundOrder = getOrders()
+        return getOrders()
                 .stream()
                 .filter(u -> u.getNumber().equals(number))
                 .findAny().orElseThrow(() -> new OrderDoesntExistException());
-        return foundOrder;
     }
 }
