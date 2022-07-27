@@ -1,0 +1,68 @@
+DEBUG Test worker org.testcontainers.utility.TestcontainersConfiguration - Testcontainers configuration overrides will be loaded from file:/C:/Users/Karol%20Kopyto/.testcontainers.properties
+INFO Test worker org.testcontainers.containers.SeleniumUtils - Selenium API version 3.141.59 detected on classpath
+INFO Test worker org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+DEBUG ducttape-0 org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+DEBUG ducttape-0 com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: org.testcontainers.dockerclient.transport.okhttp.OkHttpDockerCmdExecFactory$1@579de21
+INFO Test worker org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy - Accessing docker with local Npipe socket (npipe:////./pipe/docker_engine)
+INFO Test worker org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+DEBUG Test worker org.testcontainers.dockerclient.DockerClientProviderStrategy - Checking Docker OS type for local Npipe socket (npipe:////./pipe/docker_engine)
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: com.github.dockerjava.core.exec.InfoCmdExec@7481c7e0
+INFO Test worker org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: com.github.dockerjava.core.exec.InfoCmdExec@5396bee4
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: com.github.dockerjava.core.exec.VersionCmdExec@57e3fad4
+INFO Test worker org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 20.10.17
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 5981 MB
+DEBUG Test worker org.testcontainers.DockerClientFactory - Ryuk is enabled
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: ListImagesCmdImpl[imageNameFilter=quay.io/testcontainers/ryuk:0.2.3,showAll=false,filters=com.github.dockerjava.core.util.FiltersBuilder@0,execution=com.github.dockerjava.core.exec.ListImagesCmdExec@763971d0]
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - Looking up auth config for image: quay.io/testcontainers/ryuk:0.2.3
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - RegistryAuthLocator has configFile: C:\Users\Karol Kopyto\.docker\config.json (exists) and commandPathPrefix: 
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - registryName [quay.io] for dockerImageName [quay.io/testcontainers/ryuk:0.2.3]
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - Executing docker credential provider: docker-credential-desktop to locate auth config for: quay.io
+DEBUG Test worker org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Executing [docker-credential-desktop, get].
+DEBUG Test worker org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Started Process[pid=2344, exitValue="not exited"]
+DEBUG WaitForProcess-Process[pid=2344, exitValue="not exited"] org.testcontainers.shaded.org.zeroturnaround.exec.WaitForProcess - Process[pid=2344, exitValue=1] stopped with exit code 1
+DEBUG Test worker org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Executing [docker-credential-desktop, get].
+DEBUG Test worker org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Started Process[pid=10708, exitValue="not exited"]
+DEBUG WaitForProcess-Process[pid=10708, exitValue="not exited"] org.testcontainers.shaded.org.zeroturnaround.exec.WaitForProcess - Process[pid=10708, exitValue=1] stopped with exit code 1
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - Got credentials not found error message from docker credential helper - credentials not found in native keychain
+INFO Test worker org.testcontainers.utility.RegistryAuthLocator - Credential helper/store (docker-credential-desktop) does not have credentials for quay.io
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - no matching Auth Configs - falling back to defaultAuthConfig [null]
+DEBUG Test worker org.testcontainers.dockerclient.auth.AuthDelegatingDockerClientConfig - Effective auth config [null]
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: com.github.dockerjava.core.command.CreateContainerCmdImpl@3f10e20e[name=testcontainers-ryuk-da8302b9-bf0c-43be-ba99-c6894fc619c4,hostName=<null>,domainName=<null>,user=<null>,attachStdin=<null>,attachStdout=<null>,attachStderr=<null>,portSpecs=<null>,tty=<null>,stdinOpen=<null>,stdInOnce=<null>,env=<null>,cmd=<null>,healthcheck=<null>,argsEscaped=<null>,entrypoint=<null>,image=quay.io/testcontainers/ryuk:0.2.3,volumes=com.github.dockerjava.api.model.Volumes@4245ba2,workingDir=<null>,macAddress=<null>,onBuild=<null>,networkDisabled=<null>,exposedPorts=com.github.dockerjava.api.model.ExposedPorts@3e6423fc,stopSignal=<null>,stopTimeout=<null>,hostConfig=com.github.dockerjava.api.model.HostConfig@788c9dee[binds=com.github.dockerjava.api.model.Binds@1faaf807,blkioWeight=<null>,blkioWeightDevice=<null>,blkioDeviceReadBps=<null>,blkioDeviceWriteBps=<null>,blkioDeviceReadIOps=<null>,blkioDeviceWriteIOps=<null>,memorySwappiness=<null>,nanoCPUs=<null>,capAdd=<null>,capDrop=<null>,containerIDFile=<null>,cpuPeriod=<null>,cpuRealtimePeriod=<null>,cpuRealtimeRuntime=<null>,cpuShares=<null>,cpuQuota=<null>,cpusetCpus=<null>,cpusetMems=<null>,devices=<null>,deviceCgroupRules=<null>,diskQuota=<null>,dns=<null>,dnsOptions=<null>,dnsSearch=<null>,extraHosts=<null>,groupAdd=<null>,ipcMode=<null>,cgroup=<null>,links=<null>,logConfig=<null>,lxcConf=<null>,memory=<null>,memorySwap=<null>,memoryReservation=<null>,kernelMemory=<null>,networkMode=<null>,oomKillDisable=<null>,init=<null>,autoRemove=true,oomScoreAdj=<null>,portBindings=<null>,privileged=false,publishAllPorts=true,readonlyRootfs=<null>,restartPolicy=<null>,ulimits=<null>,cpuCount=<null>,cpuPercent=<null>,ioMaximumIOps=<null>,ioMaximumBandwidth=<null>,volumesFrom=<null>,mounts=<null>,pidMode=<null>,isolation=<null>,securityOpts=<null>,storageOpt=<null>,cgroupParent=<null>,volumeDriver=<null>,shmSize=<null>,pidsLimit=<null>,runtime=<null>,tmpFs=<null>,utSMode=<null>,usernsMode=<null>,sysctls=<null>,consoleSize=<null>],labels={org.testcontainers=true},shell=<null>,networkingConfig=<null>,ipv4Address=<null>,ipv6Address=<null>,aliases=<null>,authConfig=<null>,execution=com.github.dockerjava.core.exec.CreateContainerCmdExec@5e2018b0]
+DEBUG Test worker org.testcontainers.utility.TestcontainersConfiguration - Testcontainers configuration overrides will be loaded from file:/C:/Users/Karol%20Kopyto/.testcontainers.properties
+INFO Test worker org.testcontainers.containers.SeleniumUtils - Selenium API version 3.141.59 detected on classpath
+INFO Test worker org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+DEBUG ducttape-0 org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+DEBUG ducttape-0 com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: org.testcontainers.dockerclient.transport.okhttp.OkHttpDockerCmdExecFactory$1@7618f94c
+INFO Test worker org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy - Accessing docker with local Npipe socket (npipe:////./pipe/docker_engine)
+INFO Test worker org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+DEBUG Test worker org.testcontainers.dockerclient.DockerClientProviderStrategy - Checking Docker OS type for local Npipe socket (npipe:////./pipe/docker_engine)
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: com.github.dockerjava.core.exec.InfoCmdExec@5d955814
+INFO Test worker org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: com.github.dockerjava.core.exec.InfoCmdExec@6efa4352
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: com.github.dockerjava.core.exec.VersionCmdExec@537cae29
+INFO Test worker org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 20.10.17
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 5981 MB
+DEBUG Test worker org.testcontainers.DockerClientFactory - Ryuk is enabled
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: ListImagesCmdImpl[imageNameFilter=quay.io/testcontainers/ryuk:0.2.3,showAll=false,filters=com.github.dockerjava.core.util.FiltersBuilder@0,execution=com.github.dockerjava.core.exec.ListImagesCmdExec@6ad696c1]
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - Looking up auth config for image: quay.io/testcontainers/ryuk:0.2.3
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - RegistryAuthLocator has configFile: C:\Users\Karol Kopyto\.docker\config.json (exists) and commandPathPrefix: 
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - registryName [quay.io] for dockerImageName [quay.io/testcontainers/ryuk:0.2.3]
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - Executing docker credential provider: docker-credential-desktop to locate auth config for: quay.io
+DEBUG Test worker org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Executing [docker-credential-desktop, get].
+DEBUG Test worker org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Started Process[pid=16848, exitValue="not exited"]
+DEBUG WaitForProcess-Process[pid=16848, exitValue="not exited"] org.testcontainers.shaded.org.zeroturnaround.exec.WaitForProcess - Process[pid=16848, exitValue=1] stopped with exit code 1
+DEBUG Test worker org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Executing [docker-credential-desktop, get].
+DEBUG Test worker org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Started Process[pid=11624, exitValue="not exited"]
+DEBUG WaitForProcess-Process[pid=11624, exitValue="not exited"] org.testcontainers.shaded.org.zeroturnaround.exec.WaitForProcess - Process[pid=11624, exitValue=1] stopped with exit code 1
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - Got credentials not found error message from docker credential helper - credentials not found in native keychain
+INFO Test worker org.testcontainers.utility.RegistryAuthLocator - Credential helper/store (docker-credential-desktop) does not have credentials for quay.io
+DEBUG Test worker org.testcontainers.utility.RegistryAuthLocator - no matching Auth Configs - falling back to defaultAuthConfig [null]
+DEBUG Test worker org.testcontainers.dockerclient.auth.AuthDelegatingDockerClientConfig - Effective auth config [null]
+DEBUG Test worker com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: com.github.dockerjava.core.command.CreateContainerCmdImpl@3f025901[name=testcontainers-ryuk-bc9a7481-2896-4e73-8442-b3ab020eb223,hostName=<null>,domainName=<null>,user=<null>,attachStdin=<null>,attachStdout=<null>,attachStderr=<null>,portSpecs=<null>,tty=<null>,stdinOpen=<null>,stdInOnce=<null>,env=<null>,cmd=<null>,healthcheck=<null>,argsEscaped=<null>,entrypoint=<null>,image=quay.io/testcontainers/ryuk:0.2.3,volumes=com.github.dockerjava.api.model.Volumes@3d1fd222,workingDir=<null>,macAddress=<null>,onBuild=<null>,networkDisabled=<null>,exposedPorts=com.github.dockerjava.api.model.ExposedPorts@454eb10b,stopSignal=<null>,stopTimeout=<null>,hostConfig=com.github.dockerjava.api.model.HostConfig@2cd0948f[binds=com.github.dockerjava.api.model.Binds@2de2809c,blkioWeight=<null>,blkioWeightDevice=<null>,blkioDeviceReadBps=<null>,blkioDeviceWriteBps=<null>,blkioDeviceReadIOps=<null>,blkioDeviceWriteIOps=<null>,memorySwappiness=<null>,nanoCPUs=<null>,capAdd=<null>,capDrop=<null>,containerIDFile=<null>,cpuPeriod=<null>,cpuRealtimePeriod=<null>,cpuRealtimeRuntime=<null>,cpuShares=<null>,cpuQuota=<null>,cpusetCpus=<null>,cpusetMems=<null>,devices=<null>,deviceCgroupRules=<null>,diskQuota=<null>,dns=<null>,dnsOptions=<null>,dnsSearch=<null>,extraHosts=<null>,groupAdd=<null>,ipcMode=<null>,cgroup=<null>,links=<null>,logConfig=<null>,lxcConf=<null>,memory=<null>,memorySwap=<null>,memoryReservation=<null>,kernelMemory=<null>,networkMode=<null>,oomKillDisable=<null>,init=<null>,autoRemove=true,oomScoreAdj=<null>,portBindings=<null>,privileged=false,publishAllPorts=true,readonlyRootfs=<null>,restartPolicy=<null>,ulimits=<null>,cpuCount=<null>,cpuPercent=<null>,ioMaximumIOps=<null>,ioMaximumBandwidth=<null>,volumesFrom=<null>,mounts=<null>,pidMode=<null>,isolation=<null>,securityOpts=<null>,storageOpt=<null>,cgroupParent=<null>,volumeDriver=<null>,shmSize=<null>,pidsLimit=<null>,runtime=<null>,tmpFs=<null>,utSMode=<null>,usernsMode=<null>,sysctls=<null>,consoleSize=<null>],labels={org.testcontainers=true},shell=<null>,networkingConfig=<null>,ipv4Address=<null>,ipv6Address=<null>,aliases=<null>,authConfig=<null>,execution=com.github.dockerjava.core.exec.CreateContainerCmdExec@7921083b]
