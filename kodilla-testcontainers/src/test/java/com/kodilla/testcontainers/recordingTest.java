@@ -3,9 +3,7 @@ package com.kodilla.testcontainers;
 import org.apache.log4j.BasicConfigurator;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -20,23 +18,16 @@ import org.testcontainers.shaded.org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL;
-import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.SKIP;
 
-public class ApplicationTest {
-
-    public GenericContainer webServer;
+public class recordingTest {
     public BrowserWebDriverContainer chrome;
-
-
+    public GenericContainer webServer;
 
     @Before
-    public void setUp() {
+    public void setUp(){
         BasicConfigurator.configure();
         Network network = Network.newNetwork();
-
-
         webServer =
                 new GenericContainer(
                         new ImageFromDockerfile()
@@ -50,38 +41,27 @@ public class ApplicationTest {
                         .withNetworkAliases("my-server")
                         .withExposedPorts(80);
         webServer.start();
-
         chrome =
-                new BrowserWebDriverContainer<>()
-                        .withNetwork(network)
-                        .withRecordingMode(SKIP, null)
-                        .withCapabilities(new ChromeOptions());
+                new BrowserWebDriverContainer()
+                        .withCapabilities(new ChromeOptions())
+                        .withRecordingMode(RECORD_ALL, new File("./build/"))
+                        .withRecordingFileFactory(new DefaultRecordingFileFactory());
         chrome.start();
-
-//        firefox =
-//                new BrowserWebDriverContainer()
-//                        .withCapabilities(new FirefoxOptions())
-//                        .withRecordingMode(RECORD_ALL, new File("./build/"))
-//                        .withRecordingFileFactory(new DefaultRecordingFileFactory());
-//        firefox.start();
     }
 
     @Test
-    public void customImageTest() throws InterruptedException, IOException {
+    public void recordingPageTest() throws IOException {
         RemoteWebDriver driver = chrome.getWebDriver();
         driver.get("http://my-server/");
 
-        File screenshot = driver.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screenshot, new File("./build/screenshots/" + screenshot.getName()));
-
-        String title = driver.findElement(By.id("title")).getText();
-        assertEquals("My dockerized web page.", title);
+        File record = driver.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(record, new File("./build/" + record.getName()));
     }
 
     @After
-    public void tearDown() {
-        webServer.stop();
+    public void tearDown(){
         chrome.stop();
-//        firefox.stop();
+        webServer.stop();
     }
+
 }
