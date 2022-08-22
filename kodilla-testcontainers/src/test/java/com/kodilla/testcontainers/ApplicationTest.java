@@ -1,8 +1,6 @@
+
 package com.kodilla.testcontainers;
 
-import org.apache.log4j.BasicConfigurator;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -26,62 +24,46 @@ import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordi
 
 public class ApplicationTest {
 
-    public GenericContainer webServer;
-    public BrowserWebDriverContainer chrome;
+    @Rule
+    public Network network = Network.newNetwork();
 
+    @Rule
+    public GenericContainer webServer =
+            new GenericContainer(
+                    new ImageFromDockerfile()
+                            .withFileFromClasspath("/tmp/index.html", "index.html")
+                            .withDockerfileFromBuilder(builder ->
+                                    builder
+                                            .from("httpd:2.4")
+                                            .copy("/tmp/index.html", "/usr/local/apache2/htdocs")
+                                            .build()))
+                    .withNetwork(network)
+                    .withNetworkAliases("my-server")
+                    .withExposedPorts(80);
 
-
-    @Before
-    public void setUp() {
-        BasicConfigurator.configure();
-        Network network = Network.newNetwork();
-
-
-        webServer =
-                new GenericContainer(
-                        new ImageFromDockerfile()
-                                .withFileFromClasspath("/tmp/index.html", "index.html")
-                                .withDockerfileFromBuilder(builder ->
-                                        builder
-                                                .from("httpd:2.4")
-                                                .copy("/tmp/index.html", "/usr/local/apache2/htdocs")
-                                                .build()))
-                        .withNetwork(network)
-                        .withNetworkAliases("my-server")
-                        .withExposedPorts(80);
-        webServer.start();
-
-        chrome =
-                new BrowserWebDriverContainer<>()
-                        .withNetwork(network)
-                        .withRecordingMode(SKIP, null)
-                        .withCapabilities(new ChromeOptions());
-        chrome.start();
-
-//        firefox =
-//                new BrowserWebDriverContainer()
-//                        .withCapabilities(new FirefoxOptions())
-//                        .withRecordingMode(RECORD_ALL, new File("./build/"))
-//                        .withRecordingFileFactory(new DefaultRecordingFileFactory());
-//        firefox.start();
-    }
+//    @Rule
+//    public BrowserWebDriverContainer firefox =
+//            new BrowserWebDriverContainer()
+//                    .withCapabilities(new FirefoxOptions())
+//                    .withRecordingMode(RECORD_ALL, new File("./build/"))
+//                    .withRecordingFileFactory(new DefaultRecordingFileFactory());
+    @Rule
+    public BrowserWebDriverContainer chrome =
+            new BrowserWebDriverContainer<>()
+                    .withNetwork(network)
+                    .withRecordingMode(SKIP, null)
+                    .withCapabilities(new ChromeOptions());
 
     @Test
     public void customImageTest() throws InterruptedException, IOException {
         RemoteWebDriver driver = chrome.getWebDriver();
+//        RemoteWebDriver driver = firefox.getWebDriver();
         driver.get("http://my-server/");
 
         File screenshot = driver.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshot, new File("./build/screenshots/" + screenshot.getName()));
 
-        String title = driver.findElement(By.id("title")).getText();
-        assertEquals("My dockerized web page.", title);
-    }
-
-    @After
-    public void tearDown() {
-        webServer.stop();
-        chrome.stop();
-//        firefox.stop();
+        String title = driver.findElement(By.id("name")).getText();
+        assertEquals("Karol Kopyto", title);
     }
 }

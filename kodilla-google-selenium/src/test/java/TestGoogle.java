@@ -30,23 +30,23 @@ public class TestGoogle {
         driver.close();
     }
 
-//    @Test
-//    public void testGooglePage() {
-//        GoogleSearch googleSearch = new GoogleSearch(driver);
-//        googleSearch.loadResults(driver);
-//    }
+    @Test
+    public void testGooglePage() {
+        GoogleSearch googleSearch = new GoogleSearch(driver);
+        googleSearch.loadResults(driver);
+    }
 
-//    @Test
-//    public void testOpenRandomSearchedPage() {
-//        GoogleSearch googleSearch = new GoogleSearch(driver);
-//        GoogleResults googleResults = googleSearch.loadResults(driver);
-//
-//        List<WebElement> elements = driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a[@href]"));
-//        Random random = new Random();
-//        int randomElement = random.nextInt(elements.size() -1);
-//        String linkText = elements.get(randomElement).getAttribute("href");
-//
-//        googleResults.loadSelectedPage(randomElement);
-//        Assert.assertEquals(driver.getCurrentUrl(),linkText);
-//    }
+    @Test
+    public void testOpenRandomSearchedPage() {
+        GoogleSearch googleSearch = new GoogleSearch(driver);
+        GoogleResults googleResults = googleSearch.loadResults(driver);
+
+        List<WebElement> elements = driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a/h3"));
+        Random random = new Random();
+        int randomElement = random.nextInt(elements.size() -1);
+        String linkText = elements.get(randomElement).getText();
+
+        googleResults.loadSelectedPage(randomElement);
+        Assert.assertEquals(linkText, driver.getTitle());
+    }
 }

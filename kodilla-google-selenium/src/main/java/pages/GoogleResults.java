@@ -24,7 +24,7 @@ public class GoogleResults extends AbstractPage {
         Random generator = new Random();
         int generatedNumber = generator.nextInt(results.size() - 1);
         results.get(generatedNumber).click();
-        return new RandomSearchedPage(driver);
+        return PageFactory.initElements(driver, RandomSearchedPage.class);
     }
 
     public RandomSearchedPage loadSelectedPage(int indexOfSearchResult) {
@@ -32,7 +32,7 @@ public class GoogleResults extends AbstractPage {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a")).get(0)));
         List<WebElement> results = driver.findElements(By.xpath("//div[@data-sokoban-container]/div/div/a"));
         results.get(indexOfSearchResult).click();
-        return new RandomSearchedPage(driver);
+        return PageFactory.initElements(driver, RandomSearchedPage.class);
     }
 
     public String getLink() {

@@ -39,5 +39,4 @@ public class BrowserTest {
     public void tearDown() {
         chromeContainer.stop();
     }
-
 }

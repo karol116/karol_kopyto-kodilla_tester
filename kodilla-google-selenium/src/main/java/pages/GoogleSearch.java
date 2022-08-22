@@ -26,6 +26,6 @@ public class GoogleSearch extends AbstractPage {
         driver.findElement(By.cssSelector("body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img")).click();
         searchButton.click();
 
-        return new GoogleResults(driver);
+        return PageFactory.initElements(driver, GoogleResults.class);
     }
 }
